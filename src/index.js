@@ -1,32 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import App from './components/App';
-import {Provider} from 'react-redux';
-import {createStore} from 'redux';
 import bookReducer from './reducers/book';
 
+const randomId = () => Math.floor(Math.random() * 100);
 const bookArray = [
   {
-    id:1,
-    title:'BookOne',
-    category:'Action'
+    id: randomId(),
+    title: 'Cage the specter',
+    category: 'Horror',
+  }, {
+    id: randomId(),
+    title: '2246: Blight',
+    category: 'Sci-Fi',
+  }, {
+    id: randomId(),
+    title: 'The Children of Men',
+    category: 'History',
+  }, {
+    id: randomId(),
+    title: 'Secret of the Mute Mermaid',
+    category: 'History',
+  }, {
+    id: randomId(),
+    title: 'Death of the Giant Beast',
+    category: 'Horror',
   },
-  {
-    id:2,
-    title:'BookTwo',
-    category:'Horror'
-  }
 ];
 
 export const initialState = {
-  books:bookArray
-}
+  books: bookArray,
+};
 
 const store = createStore(bookReducer);
-console.log(store.getState());
 
 ReactDOM.render(
-  <Provider store = {store}><App/></Provider>,
+  <Provider store={store}><App /></Provider>,
   document.getElementById('root'),
 );
 
