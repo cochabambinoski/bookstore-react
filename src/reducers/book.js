@@ -14,6 +14,10 @@ export default function bookReducer(state = initialState, action) {
       return {
         books: [...state, action.book]
       }
+    case REMOVE_BOOK:
+      return {
+        books: [...state, action.book]
+      }
       default:
         return state
   }

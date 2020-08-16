@@ -2,7 +2,7 @@ import React from 'react';
 import BooksList from './BooksList';
 import BooksForm from './BooksForm';
 
-export const App = () => {
+export default function App() {
   return (
     <div>
       <BooksList />
