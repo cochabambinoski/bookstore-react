@@ -1,18 +1,19 @@
 import React from 'react';
-import Book from './Book';
+import Book from '../components/Book';
 
 export default function BooksList() {
     return (
     <table>
-        <tr>
-            <td>BookId</td>
-        </tr>
-        <tr>
-            <td>Title</td>
-        </tr>
-        <tr>
-            <td>Category</td>
-        </tr>
+      <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+      </thead>
+      <tbody>
+        <Book book = {{id: 1, title: 'test', category: 'Action'}}/>
+      </tbody>
     </table>
     );
   }
