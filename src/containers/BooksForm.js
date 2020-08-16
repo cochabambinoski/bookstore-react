@@ -8,10 +8,11 @@ export default function BooksForm() {
         <input type="text" placeholder="Enter a new book" />
         <select>
           {
-                      bookCategories.map((category, id) => <option key={id} value={category}>{category}</option>)
-                    }
+            // eslint-disable-next-line max-len
+            bookCategories.map(category => <option key={category} value={category}>{category}</option>)
+          }
         </select>
-        <button>Save Book</button>
+        <button type="submit">Save Book</button>
       </form>
     </div>
   );

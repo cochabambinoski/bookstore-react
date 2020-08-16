@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 
-function BooksList(props) {
+function BooksList(properties) {
   return (
     <table>
       <thead>
@@ -13,20 +13,16 @@ function BooksList(props) {
         </tr>
       </thead>
       <tbody>
-      {
-        props.books.map((book,id) => 
-          <Book key={id} book={book} />
-        )
+        {
+        properties.books.map(book => <Book key={book.title} book={book} />)
       }
       </tbody>
     </table>
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    books: state.books,
-  }
-}
+const mapStateToProps = state => ({
+  books: state.books,
+});
 
 export default connect(mapStateToProps)(BooksList);

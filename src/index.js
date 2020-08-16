@@ -30,11 +30,11 @@ const bookArray = [
   },
 ];
 
-export const initialState = {
+const initialState = {
   books: bookArray,
 };
 
-const store = createStore(bookReducer);
+const store = createStore(bookReducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}><App /></Provider>,

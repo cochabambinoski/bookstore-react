@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Book(props) {
+export default function Book(properties) {
   return (
     <tr>
-      <td>{props.book.id}</td>
-      <td>{props.book.title}</td>
-      <td>{props.book.category}</td>
+      <td>{properties.book.id}</td>
+      <td>{properties.book.title}</td>
+      <td>{properties.book.category}</td>
     </tr>
   );
 }
