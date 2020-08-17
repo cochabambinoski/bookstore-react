@@ -1,14 +1,4 @@
-/**
- * Implement the books.js reducer
- * with CREATE_BOOK and REMOVE_BOOK actions.Remember,
- *  your state can not be mutated!
- */
-
 import { ADD_BOOK, REMOVE_BOOK } from '../actions/index';
-
-/* const {
-  ADD_BOOK
-} = require("../src/actions"); */
 
 export default function bookReducer(state = [], action) {
   switch (action.type) {
