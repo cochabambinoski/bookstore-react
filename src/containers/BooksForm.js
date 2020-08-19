@@ -74,12 +74,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(BooksForm);
-
-/**
- * The component should store the title and the book category in its own state.
- The component should implement the handleChange method which reacts to the user
- typing to input a name or to changes in the category select.
- Each change to the form should modify the component’ s state.
- The component should implement handleSubmit which will save the
- new book in the Redux store and resets the component’ s state.
- */
