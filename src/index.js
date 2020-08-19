@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import bookReducer from './reducers/book';
 
-const randomId = () => Math.floor(Math.random() * 100);
+export const randomId = () => Math.floor(Math.random() * 100);
 const bookArray = [
   {
     id: randomId(),
@@ -30,7 +30,7 @@ const bookArray = [
   },
 ];
 
-const initialState = {
+export const initialState = {
   books: bookArray,
 };
 
