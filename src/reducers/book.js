@@ -8,7 +8,7 @@ export default function bookReducer(state = [], action) {
       };
     case REMOVE_BOOK:
       return {
-        books: [...state, action.book],
+        books: [...state.books, action.book],
       };
     default:
       return state;
