@@ -1,4 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable import/no-cycle */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
 import { randomId } from '../index';
@@ -32,9 +35,9 @@ class BooksForm extends React.Component {
     this.setState({
       id: randomId(),
     });
-    if (this.state.title != ''){
-      this.props.addBook(this.state); }
-    // console.log('book added')
+    if (this.state.title !== '') {
+      this.props.addBook(this.state);
+    }
     this.setState({
       title: '',
       category: '',
@@ -72,5 +75,9 @@ class BooksForm extends React.Component {
 const mapDispatchToProps = dispatch => ({
   addBook: book => dispatch(createBook(book)),
 });
+
+BooksForm.propTypes = {
+  addBook: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(BooksForm);

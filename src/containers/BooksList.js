@@ -5,9 +5,10 @@ import Book from '../components/Book';
 import { removeBook } from '../actions';
 
 function BooksList({ books, RemoveBook }) {
-  function handleRemoveBook(book) {
+  const handleRemoveBook = book => {
     RemoveBook(book);
-  }
+  };
+
   return (
     <table>
       <thead>
@@ -36,5 +37,6 @@ const mapStateToProps = state => ({
 });
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  RemoveBook: PropTypes.func.isRequired,
 };
-export default connect(mapStateToProps,mapDispatchToProps)(BooksList);
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

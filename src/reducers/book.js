@@ -8,7 +8,7 @@ export default function bookReducer(state = [], action) {
       };
     case REMOVE_BOOK:
       return {
-        books: [...state.books, action.book],
+        books: state.books.filter(item => item.id !== action.book.id),
       };
     default:
       return state;
