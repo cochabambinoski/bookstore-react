@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -5,7 +6,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import bookReducer from './reducers/book';
 
-const randomId = () => Math.floor(Math.random() * 100);
+export const randomId = () => Math.floor(Math.random() * 100);
 const bookArray = [
   {
     id: randomId(),
@@ -30,7 +31,7 @@ const bookArray = [
   },
 ];
 
-const initialState = {
+export const initialState = {
   books: bookArray,
 };
 
