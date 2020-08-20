@@ -19,25 +19,20 @@ class BooksForm extends React.Component {
   }
 
   handleChange(event) {
-    if (event.target.tagName === 'INPUT') {
-      this.setState({
-        title: event.target.value,
-      });
-    } else {
-      this.setState({
-        category: event.target.value,
-      });
-    }
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
   }
 
   handleSubmit(event) {
-    const { name, value } = event.target;
     event.preventDefault();
     this.setState({
       id: randomId(),
-      [name]: value,
     });
-    this.props.addBook(this.state);
+    if (this.state.title !== '') {
+      this.props.addBook(this.state);
+    }
     this.setState({
       title: '',
       category: '',
