@@ -31,13 +31,13 @@ class BooksForm extends React.Component {
   }
 
   handleSubmit(event) {
+    const { name, value } = event.target;
     event.preventDefault();
     this.setState({
       id: randomId(),
+      [name]: value,
     });
-    if (this.state.title !== '') {
-      this.props.addBook(this.state);
-    }
+    this.props.addBook(this.state);
     this.setState({
       title: '',
       category: '',
@@ -50,8 +50,8 @@ class BooksForm extends React.Component {
     return (
       <div>
         <form>
-          <input value={this.state.title} onChange={this.handleChange} type="text" placeholder="Enter a new book" />
-          <select onChange={this.handleChange}>
+          <input name="title" value={this.state.title} onChange={this.handleChange} type="text" placeholder="Enter a new book" />
+          <select name="category" onChange={this.handleChange}>
             {
             // eslint-disable-next-line max-len
             bookCategories.map(category => <option key={category} value={category}>{category}</option>)
