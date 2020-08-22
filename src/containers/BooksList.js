@@ -15,7 +15,7 @@ function BooksList({ books, RemoveBook, filterBook }) {
   };
   return (
     <div>
-      <CategoryFilter changeFilter={handleFilterChange} />
+      <CategoryFilter book={books} changeFilter={handleFilterChange} />
       <table>
         <thead>
           <tr>
@@ -27,7 +27,7 @@ function BooksList({ books, RemoveBook, filterBook }) {
         </thead>
         <tbody>
           {
-          books.map(book => <Book removing={handleRemoveBook} key={book.title} book={book} />)
+          books.books.map(book => <Book removing={handleRemoveBook} key={book.title} book={book} />)
         }
         </tbody>
       </table>

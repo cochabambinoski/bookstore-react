@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
-import { randomId } from '../index';
+import { randomId } from '../helpers/index';
 
 class BooksForm extends React.Component {
   constructor(props) {

@@ -9,13 +9,16 @@ class CategoryFilter extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
   handleChange(event) {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
-      [name]: value
-    })
-    this.props.changeFilter(this.state.category);
+      [name]: value,
+    });
+    this.props.changeFilter(this.props.book);
+    console.log(this.props.book)
   }
+
   render() {
     const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     return (
