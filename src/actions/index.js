@@ -14,5 +14,5 @@ export const removeBook = book => ({
 
 export const changeFilter = filter => ({
   type: CHANGE_FILTER,
-  filter,
+  payload: filter,
 });

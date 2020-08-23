@@ -19,8 +19,10 @@ const bookArray = [{
   id: randomId(),
   title: 'Death of the Giant Beast',
   category: 'Horror',
-}, ];
+}];
 
 export const initialState = {
   books: bookArray,
 };
+
+export const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];

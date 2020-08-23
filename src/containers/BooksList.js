@@ -5,7 +5,9 @@ import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFIlter';
 
-function BooksList({ books, RemoveBook, filterBook }) {
+function BooksList({
+  books, RemoveBook, filterBook, filter,
+}) {
   const handleRemoveBook = book => {
     RemoveBook(book);
   };
@@ -15,7 +17,7 @@ function BooksList({ books, RemoveBook, filterBook }) {
   };
   return (
     <div>
-      <CategoryFilter book={books} changeFilter={handleFilterChange} />
+      <CategoryFilter filter={filter} book={books} changeFilter={handleFilterChange} />
       <table>
         <thead>
           <tr>
@@ -26,9 +28,16 @@ function BooksList({ books, RemoveBook, filterBook }) {
           </tr>
         </thead>
         <tbody>
-          {
-          books.books.map(book => <Book removing={handleRemoveBook} key={book.title} book={book} />)
-        }
+          {books.books.filter(
+            book => (filter === 'All' || book.category === filter),
+          )
+            .map(book => (
+              <Book
+                book={book}
+                key={book.id}
+                removing={handleRemoveBook}
+              />
+            ))}
         </tbody>
       </table>
     </div>
@@ -42,9 +51,12 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   books: state.books,
+  filter: state.filter,
 });
 BooksList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  books: PropTypes.shape({
+    books: PropTypes.array,
+  }),
   RemoveBook: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

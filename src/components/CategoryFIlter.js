@@ -1,42 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { bookCategories } from '../helpers/index';
 
-class CategoryFilter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: '',
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-    this.props.changeFilter(this.props.book);
-    console.log(this.props.book)
-  }
-
-  render() {
-    const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-    return (
-      <div>
-        <form>
-          <label>
-            Please choose a category:
-            <select name="category" onChange={this.handleChange}>
-              {
-            // eslint-disable-next-line max-len
-            bookCategories.map(category => <option key={category} value={category}>{category}</option>)
-          }
-            </select>
-          </label>
-        </form>
-        <h1>{this.state.category}</h1>
-      </div>
-    );
-  }
+function CategoryFilter(props) {
+  const handleFilterChange = event => {
+    const { value } = event.target;
+    props.changeFilter(value);
+  };
+  return (
+    <div>
+      <form>
+        <label htmlFor="book-categories">
+          Please choose a category:
+          <select
+            id="book-categories"
+            name="category"
+            onChange={handleFilterChange}
+          >
+            <option value="All">
+              All
+            </option>
+            { bookCategories.map(category => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </label>
+      </form>
+    </div>
+  );
 }
 export default CategoryFilter;

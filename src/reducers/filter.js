@@ -1,14 +1,9 @@
-import { initialState } from '../helpers';
-
 const { CHANGE_FILTER } = require('../actions');
 
-const changeFilterReducer = (state = initialState, action) => {
+const changeFilterReducer = (state = 'All', action) => {
   switch (action.type) {
     case CHANGE_FILTER:
-      return {
-        // books: state.books.filter(book => console.log(book.category)),
-        books: state.books.filter(book => console.log(book.category === action.filter.category)),
-      };
+      return action.payload;
     default:
       return state;
   }
