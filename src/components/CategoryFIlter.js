@@ -31,4 +31,9 @@ function CategoryFilter(props) {
     </div>
   );
 }
+
+CategoryFilter.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
+};
+
 export default CategoryFilter;

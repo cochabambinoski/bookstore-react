@@ -55,8 +55,10 @@ const mapStateToProps = state => ({
 });
 BooksList.propTypes = {
   books: PropTypes.shape({
-    books: PropTypes.array,
-  }),
+    books: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
+  filter: PropTypes.string.isRequired,
+  filterBook: PropTypes.func.isRequired,
   RemoveBook: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
