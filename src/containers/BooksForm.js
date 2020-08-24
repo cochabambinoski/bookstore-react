@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
-import { randomId } from '../index';
+import { randomId, bookCategories } from '../helpers/index';
 
 class BooksForm extends React.Component {
   constructor(props) {
@@ -40,8 +40,6 @@ class BooksForm extends React.Component {
   }
 
   render() {
-    const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-
     return (
       <div>
         <form>
@@ -66,7 +64,6 @@ class BooksForm extends React.Component {
     );
   }
 }
-// const mapState
 const mapDispatchToProps = dispatch => ({
   addBook: book => dispatch(createBook(book)),
 });

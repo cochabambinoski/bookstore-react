@@ -1,6 +1,7 @@
 import { ADD_BOOK, REMOVE_BOOK } from '../actions/index';
+import { initialState } from '../helpers/index';
 
-export default function bookReducer(state = [], action) {
+export default function bookReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_BOOK:
       return {
