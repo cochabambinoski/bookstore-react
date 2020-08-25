@@ -8,6 +8,7 @@ import rootReducer from './reducers';
 import './styles/App.scss';
 import './styles/booklist.scss';
 import './styles/booksform.scss';
+import './styles/categoryFilter.scss';
 
 const store = createStore(rootReducer);
 
