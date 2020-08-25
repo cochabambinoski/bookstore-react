@@ -7,6 +7,7 @@ import App from './components/App';
 import rootReducer from './reducers';
 import './styles/App.scss';
 import './styles/booklist.scss';
+import './styles/booksform.scss';
 
 const store = createStore(rootReducer);
 
