@@ -18,17 +18,17 @@ function BooksList({
   return (
     <div>
       <CategoryFilter filter={filter} book={books} changeFilter={handleFilterChange} />
-        <div className="book-card">
-          {books.books.filter(
-            book => (filter === 'All' || book.category === filter),
-          )
-            .map(book => (
-              <Book
-                book={book}
-                key={book.id}
-                removing={handleRemoveBook}
-              />
-            ))}
+      <div className="book-card">
+        {books.books.filter(
+          book => (filter === 'All' || book.category === filter),
+        )
+          .map(book => (
+            <Book
+              book={book}
+              key={book.id}
+              removing={handleRemoveBook}
+            />
+          ))}
       </div>
     </div>
   );

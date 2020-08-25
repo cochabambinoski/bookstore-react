@@ -8,8 +8,8 @@ export default function Book({ book, removing }) {
   return (
     <div className="books-item">
       <div className="book-info">
-      <h2 className="book-category">{book.category}</h2>
-      <h2 className="book-title">{book.title}</h2>
+        <h2 className="book-category">{book.category}</h2>
+        <h2 className="book-title">{book.title}</h2>
       </div>
       <div className="book-links">
         <button type="submit">Comment</button>
