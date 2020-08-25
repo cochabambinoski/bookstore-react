@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/App';
 import rootReducer from './reducers';
-import './App.scss';
+import './styles/App.scss';
+import './styles/booklist.scss';
 
 const store = createStore(rootReducer);
 

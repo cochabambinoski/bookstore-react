@@ -18,16 +18,7 @@ function BooksList({
   return (
     <div>
       <CategoryFilter filter={filter} book={books} changeFilter={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
-        <tbody>
+        <div className="book-card">
           {books.books.filter(
             book => (filter === 'All' || book.category === filter),
           )
@@ -38,8 +29,7 @@ function BooksList({
                 removing={handleRemoveBook}
               />
             ))}
-        </tbody>
-      </table>
+      </div>
     </div>
   );
 }

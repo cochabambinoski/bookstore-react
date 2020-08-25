@@ -1,8 +1,4 @@
-$white-color: #fff;
-$azure: #0290ff;
-$pale-grey: #f5f6fa;
-$width: 1400px;
-$black-three: #121212;
+@import "./variables";
 
 body {
   background: $pale-grey;
@@ -10,9 +6,8 @@ body {
   height: 1434px;
 
   .app-body {
-    background: $white-color;
+    background: #fafafa;
     width: $width;
-    height: 1097px;
     border-radius: 4px;
     margin-left: 100px;
     margin-top: 149px;
