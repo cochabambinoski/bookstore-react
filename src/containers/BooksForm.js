@@ -42,24 +42,18 @@ class BooksForm extends React.Component {
   render() {
     return (
       <div>
+        <h2 className="title">Add a Book</h2>
         <form>
-          <input name="title" value={this.state.title} onChange={this.handleChange} type="text" placeholder="Enter a new book" />
-          <select name="category" onChange={this.handleChange}>
+          <input name="title" className="Lesson-Panel" value={this.state.title} onChange={this.handleChange} type="text" placeholder="Book Title" />
+          <select name="category" className="Lesson-Panel1" onChange={this.handleChange}>
+            <option>Category</option>
             {
             // eslint-disable-next-line max-len
             bookCategories.map(category => <option key={category} value={category}>{category}</option>)
           }
           </select>
-          <button onClick={this.handleSubmit} type="submit">Save Book</button>
+          <button className="Rectangle-2" onClick={this.handleSubmit} type="submit">ADD BOOK</button>
         </form>
-        <h1>
-          input:
-          {this.state.title}
-        </h1>
-        <h1>
-          category:
-          {this.state.category}
-        </h1>
       </div>
     );
   }

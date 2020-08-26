@@ -1,0 +1,57 @@
+@import "./variables";
+
+.books-item {
+  width: 1200px;
+  height: 170px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background: $white-color;
+  margin-left: 100px;
+  margin-top: 25px;
+  padding-left: 20px;
+  box-sizing: border-box;
+
+  .book-category {
+    width: 55px;
+    height: 18px;
+    opacity: 0.5;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $black-three;
+  }
+
+  .book-title {
+    width: 197px;
+    height: 29px;
+    font-family: RobotoSlab, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: $black-three;
+    margin-bottom: 40px;
+  }
+
+  .book-links > button {
+    width: 73px;
+    height: 19px;
+    font-family: RobotoSlab, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4386bf;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}

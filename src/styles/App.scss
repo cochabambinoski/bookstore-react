@@ -1,0 +1,62 @@
+@import "./variables";
+
+body {
+  background: $pale-grey;
+  width: 1600px;
+  height: 1434px;
+
+  .app-body {
+    background: #fafafa;
+    width: $width;
+    border-radius: 4px;
+    margin-left: 100px;
+    margin-top: 149px;
+    padding-bottom: 265px;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+
+    header {
+      background: $white-color;
+      display: flex;
+      align-items: center;
+      width: $width;
+      height: 95px;
+      border-bottom: 3px solid $pale-grey;
+
+      .logo {
+        padding-left: 200px;
+        width: 240px;
+        height: 37px;
+        font-family: Montserrat, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $azure;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .header-link {
+        width: 59px;
+        height: 16px;
+        font-family: Montserrat, sans-serif;
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 1.9px;
+        color: $black-three;
+        text-transform: uppercase;
+
+        &:nth-child(2) {
+          margin: 17px;
+        }
+      }
+    }
+  }
+}
